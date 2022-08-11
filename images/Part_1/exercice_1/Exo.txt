@@ -1,0 +1,22 @@
+Y a-t-il une demande de connexion initiale ?
+    > Non il n'y a pas de demande de connexion (2)
+
+Capturez une demande de lecture du fichier /tmp/$nom.txt et une demande d'écriture de /tmp/$nom.txt ou vous remplacerez $nom par votre nom de famille.
+    > (3) & (4)
+    
+Décrivez les champs de la requête en vous appuyant sur la RFC si nécessaire.
+    > Norme RFC 1350 (https://tools.ietf.org/html/rfc1350) (5)
+    
+            opcode  operation
+            1       Read request (RRQ)
+            2       Write request (WRQ)
+            3       Data (DATA)
+            4       Acknowledgment (ACK)
+            5       Error (ERROR)
+            
+            Mode : netascii | binary | mail
+    
+            2 bytes     string    1 byte     string   1 byte
+            ------------------------------------------------
+           | Opcode |  Filename  |   0  |    Mode    |   0  |
+            ------------------------------------------------
